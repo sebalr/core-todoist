@@ -14,7 +14,7 @@ namespace todoist
     {
         public static void Main(string[] args)
         {
-                var host = new WebHostBuilder()
+            var host = new WebHostBuilder()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseKestrel()
                 .UseStartup<Startup>()
@@ -22,9 +22,5 @@ namespace todoist
 
             host.Run();
         }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
     }
 }

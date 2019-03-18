@@ -5,37 +5,49 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nancy.Owin;
-using Microsoft.Extensions.Configuration;
+using todoist.infraestructure;
 using todoist.infraestructure.login;
+using todoist.infraestructure.settings;
+using todoist.persistance;
 
 namespace todoist
 {
     public class Startup
     {
-        public Startup(IConfiguration config){
-             _config = config;
-        }
+        private readonly IConfiguration config;
 
-         private readonly IConfiguration _config;
+        public Startup(IHostingEnvironment env)
+        {
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .SetBasePath(env.ContentRootPath);
+
+            config = builder.Build();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<AuthSettings>(_config.GetSection("AuthSettings"));
+            var appConfig = new AppSettings();
+            ConfigurationBinder.Bind(config, appConfig);
+
+            /* services.AddDbContext<BaseContext>(options =>
+                options.UseMySql(appConfig.DbSettings.ConnectionString)); */
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            var appConfig = new AppSettings();
+            ConfigurationBinder.Bind(config, appConfig);
 
-                app.UseOwin(b => b.UseNancy());
+            app.UseOwin(x => x.UseNancy(opt => opt.Bootstrapper = new CustomBootstrapper(appConfig)));
         }
     }
 }

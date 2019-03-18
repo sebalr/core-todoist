@@ -3,6 +3,7 @@ using System.Security.Claims;
 using Jose;
 using Nancy;
 using todoist.infraestructure.login;
+using todoist.infraestructure.settings;
 
 namespace todoist.infraestructure.services
 {
