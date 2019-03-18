@@ -1,7 +1,7 @@
 using Nancy;
 using Nancy.Security;
-using todoist.persistance;
-using todoist.persistance.finders;
+using todoist.Persistance;
+using todoist.Persistance.finders;
 
 namespace todoist.modules
 {

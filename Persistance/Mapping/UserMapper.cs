@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using todoist.infraestructure.entities;
+using todoist.infraestructure.Entities;
 
-namespace todoist.persistance.mappers
+namespace todoist.Persistance.Mapping
 {
     public class UserMapper : IEntityTypeConfiguration<User>
     {

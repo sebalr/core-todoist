@@ -10,9 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nancy.Owin;
 using todoist.infraestructure;
-using todoist.infraestructure.login;
-using todoist.infraestructure.settings;
-using todoist.persistance;
+using todoist.infraestructure.Login;
+using todoist.infraestructure.Settings;
+using todoist.Persistance;
 
 namespace todoist
 {

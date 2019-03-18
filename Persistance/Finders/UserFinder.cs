@@ -1,7 +1,7 @@
 using System;
-using todoist.infraestructure.entities;
+using todoist.infraestructure.Entities;
 
-namespace todoist.persistance.finders
+namespace todoist.Persistance.finders
 {
     public interface IUserFinder : IBaseFinder<User>
     {

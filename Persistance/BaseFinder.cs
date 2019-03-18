@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace todoist.persistance
+namespace todoist.Persistance
 {
 
    public interface IBaseFinder<TEntity>

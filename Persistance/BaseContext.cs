@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using todoist.infraestructure.entities;
-using todoist.persistance.mappers;
+using todoist.infraestructure.Entities;
+using todoist.Persistance.Mapping;
 
-namespace todoist.persistance
+namespace todoist.Persistance
 {
 
     public class BaseContext : DbContext

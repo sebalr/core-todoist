@@ -1,7 +1,7 @@
 using System;
 using System.Security.Principal;
 
-namespace todoist.infraestructure.login
+namespace todoist.infraestructure.Login
 {
     internal class AuthUser : IIdentity
     {

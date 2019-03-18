@@ -5,10 +5,10 @@ using Nancy;
 using Nancy.Authentication.Stateless;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
-using todoist.infraestructure.services;
-using todoist.infraestructure.settings;
-using todoist.persistance;
-using todoist.persistance.finders;
+using todoist.infraestructure.Services;
+using todoist.infraestructure.Settings;
+using todoist.Persistance;
+using todoist.Persistance.finders;
 
 namespace todoist.infraestructure
 {
@@ -45,7 +45,7 @@ namespace todoist.infraestructure
             base.ConfigureRequestContainer(container, context);
 
             var optionsBuilder = new DbContextOptionsBuilder<BaseContext>();
-            optionsBuilder.UseMySql("Server=http://172.17.0.2;Database=Todois;Uid=root;Pwd=se53ba63.;");
+            optionsBuilder.UseMySql(_appConfig.DbSettings.ConnectionString);
             container.Register<BaseContext>(new BaseContext(optionsBuilder.Options));
 
             // container.Register<IBaseContext, BaseContext>();

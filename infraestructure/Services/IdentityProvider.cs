@@ -2,10 +2,10 @@ using System;
 using System.Security.Claims;
 using Jose;
 using Nancy;
-using todoist.infraestructure.login;
-using todoist.infraestructure.settings;
+using todoist.infraestructure.Login;
+using todoist.infraestructure.Settings;
 
-namespace todoist.infraestructure.services
+namespace todoist.infraestructure.Services
 {
 
     public interface IIdentityProvider
