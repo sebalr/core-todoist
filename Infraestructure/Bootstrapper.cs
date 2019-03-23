@@ -1,10 +1,12 @@
 using System;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Nancy;
 using Nancy.Authentication.Stateless;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
+using todoist.Infraestructure.Automapper;
 using todoist.Infraestructure.Services;
 using todoist.Infraestructure.Settings;
 using todoist.Persistance;
@@ -26,6 +28,14 @@ namespace todoist.Infraestructure
             base.ConfigureApplicationContainer(container);
 
             container.Register<IAppSettings>(_appConfig);
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new AutomapperProfiles());
+            });
+
+            container.Register<IMapper>(config.CreateMapper());
+
         }
 
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)

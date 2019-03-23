@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -35,6 +36,8 @@ namespace todoist
         {
             var appConfig = new AppSettings();
             ConfigurationBinder.Bind(config, appConfig);
+
+            services.AddAutoMapper();
 
             /* services.AddDbContext<BaseContext>(options =>
                 options.UseMySql(appConfig.DbSettings.ConnectionString)); */
