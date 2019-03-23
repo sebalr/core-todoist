@@ -1,5 +1,5 @@
 using System;
-using todoist.infraestructure.Entities;
+using todoist.Infraestructure.Entities;
 
 namespace todoist.Persistance.finders
 {

@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nancy.Owin;
-using todoist.infraestructure;
-using todoist.infraestructure.Login;
-using todoist.infraestructure.Settings;
+using todoist.Infraestructure;
+using todoist.Infraestructure.Login;
+using todoist.Infraestructure.Settings;
 using todoist.Persistance;
 
 namespace todoist

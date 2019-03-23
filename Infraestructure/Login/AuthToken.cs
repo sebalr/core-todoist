@@ -1,5 +1,5 @@
 using System;
-namespace todoist.infraestructure.Login
+namespace todoist.Infraestructure.Login
 {
     internal sealed class AuthToken
     {

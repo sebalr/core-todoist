@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using todoist.infraestructure.Entities;
+using todoist.Infraestructure.Entities;
 using todoist.Persistance.Mapping;
 
 namespace todoist.Persistance

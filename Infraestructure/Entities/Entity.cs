@@ -1,4 +1,4 @@
-namespace todoist.infraestructure.Entities
+namespace todoist.Infraestructure.Entities
 {
     public abstract class Entity
     {

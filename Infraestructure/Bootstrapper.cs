@@ -5,12 +5,12 @@ using Nancy;
 using Nancy.Authentication.Stateless;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
-using todoist.infraestructure.Services;
-using todoist.infraestructure.Settings;
+using todoist.Infraestructure.Services;
+using todoist.Infraestructure.Settings;
 using todoist.Persistance;
 using todoist.Persistance.finders;
 
-namespace todoist.infraestructure
+namespace todoist.Infraestructure
 {
     public class CustomBootstrapper : DefaultNancyBootstrapper
     {

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using todoist.infraestructure.Entities;
+using todoist.Infraestructure.Entities;
 
 namespace todoist.Persistance.Mapping
 {

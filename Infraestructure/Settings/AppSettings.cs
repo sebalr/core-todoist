@@ -1,5 +1,5 @@
 using System;
-namespace todoist.infraestructure.Settings
+namespace todoist.Infraestructure.Settings
 {
     public interface IAppSettings
     {
