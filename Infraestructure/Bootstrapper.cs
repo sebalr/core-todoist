@@ -11,6 +11,7 @@ using todoist.Infraestructure.Services;
 using todoist.Infraestructure.Settings;
 using todoist.Persistance;
 using todoist.Persistance.finders;
+using todoist.Persistance.Finders;
 
 namespace todoist.Infraestructure
 {
@@ -29,12 +30,6 @@ namespace todoist.Infraestructure
 
             container.Register<IAppSettings>(_appConfig);
 
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new AutomapperProfiles());
-            });
-
-            container.Register<IMapper>(config.CreateMapper());
 
         }
 
@@ -58,8 +53,16 @@ namespace todoist.Infraestructure
             optionsBuilder.UseMySql(_appConfig.DbSettings.ConnectionString);
             container.Register<BaseContext>(new BaseContext(optionsBuilder.Options));
 
-            // container.Register<IBaseContext, BaseContext>();
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.ConstructServicesUsing(container.Resolve);
+                cfg.AddProfile(new AutomapperProfiles());
+            });
+
+            container.Register<IMapper>(config.CreateMapper());
+            
             container.Register<IUserFinder, UserFinder>();
+            container.Register<ICategoryFinder, CategoryFinder>();
         }
     }
 }

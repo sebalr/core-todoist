@@ -10,5 +10,7 @@ namespace todoist.DTOs
         public IList<CategoryDTO> Categories { get; set; }
 
         public DateTime Creation { get; set; }
+
+        public ItemStateDTO ItemState { get; set; }
     }
 }

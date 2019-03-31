@@ -12,6 +12,8 @@ namespace todoist.Persistance
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserMapper());
+            modelBuilder.ApplyConfiguration(new ItemMapper());
+            modelBuilder.ApplyConfiguration(new CategoryMapper());
         }
 
     }

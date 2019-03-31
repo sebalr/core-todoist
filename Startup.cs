@@ -37,7 +37,7 @@ namespace todoist
             var appConfig = new AppSettings();
             ConfigurationBinder.Bind(config, appConfig);
 
-            services.AddAutoMapper();
+            //services.AddAutoMapper();
 
             /* services.AddDbContext<BaseContext>(options =>
                 options.UseMySql(appConfig.DbSettings.ConnectionString)); */

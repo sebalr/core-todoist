@@ -4,12 +4,12 @@ using todoist.Entities;
 
 namespace todoist.Persistance.Mapping
 {
-    public class CategoryMapper
+    public class CategoryMapper: IEntityTypeConfiguration<Category>
     {
           public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.ToTable("Category");
-            builder.Property(x => x.Name).IsRequired();
+            builder.ToTable("Category")
+            .Property(x => x.Name).IsRequired();
         }
     }
 }

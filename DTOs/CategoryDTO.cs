@@ -1,3 +1,5 @@
+using todoist.Infraestructure.DTOs;
+
 namespace todoist.DTOs
 {
 

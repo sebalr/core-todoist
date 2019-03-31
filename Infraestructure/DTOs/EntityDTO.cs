@@ -1,4 +1,4 @@
-namespace todoist.DTOs
+namespace todoist.Infraestructure.DTOs
 {
     public abstract class EntityDTO
     {

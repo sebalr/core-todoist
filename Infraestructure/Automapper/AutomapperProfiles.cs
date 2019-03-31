@@ -9,6 +9,8 @@ namespace todoist.Infraestructure.Automapper
         public AutomapperProfiles()
         {
             CreateMap<Item, ItemDTO>();
+            CreateMap<ItemDTO, Item>()
+                .ForMember(dest => dest.ItemState, opt => opt.MapFrom<EntityResolver<ItemStateDTO,ItemState>, ItemStateDTO>(src => src.ItemState));
             CreateMap<ItemState, ItemStateDTO>();
             CreateMap<Category, CategoryDTO>();
         }

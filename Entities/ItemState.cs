@@ -1,9 +1,10 @@
 using System;
 using todoist.DTOs;
+using todoist.Infraestructure.Entities;
 
 namespace todoist.Entities
 {
-    public class ItemState
+    public class ItemState : Entity
     {
         public State State { get; set; }
 

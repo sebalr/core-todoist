@@ -8,8 +8,8 @@ namespace todoist.Persistance.Mapping
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("User");
-            builder.Property(x => x.Username).IsRequired();
+            builder.ToTable("User")
+            .Property(x => x.Username).IsRequired();
         }
     }
 }
