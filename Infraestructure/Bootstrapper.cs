@@ -7,6 +7,7 @@ using Nancy.Authentication.Stateless;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 using todoist.Infraestructure.Automapper;
+using todoist.Infraestructure.Helpers;
 using todoist.Infraestructure.Services;
 using todoist.Infraestructure.Settings;
 using todoist.Persistance;
@@ -58,11 +59,14 @@ namespace todoist.Infraestructure
                 cfg.ConstructServicesUsing(container.Resolve);
                 cfg.AddProfile(new AutomapperProfiles());
             });
-
             container.Register<IMapper>(config.CreateMapper());
+
+
             
             container.Register<IUserFinder, UserFinder>();
             container.Register<ICategoryFinder, CategoryFinder>();
+
+            container.Register<IBaseModuleService, BaseModuleService>();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace todoist.Entities
 {
     public class ItemState : Entity
     {
-        public State State { get; set; }
+        public virtual State State { get; set; }
 
         public DateTime Changed { get; set; }
     }

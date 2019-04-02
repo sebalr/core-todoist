@@ -14,6 +14,7 @@ namespace todoist.Persistance
             modelBuilder.ApplyConfiguration(new UserMapper());
             modelBuilder.ApplyConfiguration(new ItemMapper());
             modelBuilder.ApplyConfiguration(new CategoryMapper());
+            modelBuilder.ApplyConfiguration(new ItemCategoryMapper());
         }
 
     }

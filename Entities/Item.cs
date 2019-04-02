@@ -9,10 +9,10 @@ namespace todoist.Entities
     {
         public string Body { get; set; }
 
-        public ICollection<ItemCategory> Categories { get; set; }
+        public virtual ICollection<ItemCategory> Categories { get; set; }
 
         public DateTime Creation { get; set; }
 
-        public ItemState ItemState { get; set; }
+        public virtual ItemState ItemState { get; set; }
     }
 }

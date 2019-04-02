@@ -9,10 +9,14 @@ namespace todoist.Infraestructure.Entities
             return string.Format("Id: {0}", Id);
         }
     }
-    
-    public abstract class EntityWithSoftDelete: Entity
+
+    public abstract class EntityWithSoftDelete : Entity, ISoftDeletable
     {
         public bool Deleted { get; set; }
+    }
 
+    public interface ISoftDeletable
+    {
+        bool Deleted { get; set; }
     }
 }
